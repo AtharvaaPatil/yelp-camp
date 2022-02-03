@@ -60,6 +60,7 @@ passport.serializeUser(User.serializeUser()); //this is how we store a user in t
 passport.deserializeUser(User.deserializeUser());
 
 app.use((req, res, next) => {
+    res.locals.currentUser = req.user;
     res.locals.success = req.flash('success');
     res.locals.error = req.flash('error');
     next();
