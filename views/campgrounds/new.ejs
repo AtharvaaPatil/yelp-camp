@@ -20,16 +20,8 @@
                 </div>
             </div>
 
-            <!-- <div class="form-file">
-                <input type="file" id="customFile" name="image" class="form-file-input" multiple> 
-                <label for="image" class="form-file-label"></label>
-                <span class="form-file-text">Choose images...</span>
-                <span class="form-file-button">Browse</span>
-            </div>
-             -->
 
-
-            <input type="file" name="image" id="" multiple>
+            <!-- <input type="file" name="image" id="" multiple> -->
 
             <!-- <div class="mb-3">
                 <label class="form-label" for="image">Image Url</label>
@@ -56,6 +48,25 @@
                     <div class="valid-feedback">
                         Looks good!
                     </div>
+            </div>
+
+
+            <!-- <div class="mb-3">
+                <label for="">Upload Images</label>
+            <div class="form-file custom-file">
+                <input type="file" id="image" name="image" class="form-file-input" multiple> 
+                <label for="image" class="form-file-label"></label>
+                <span class="form-file-text custom-file-label">Choose images...</span>
+                <span class="form-file-button">Browse</span>
+            </div>
+            </div> -->
+
+            <div class="mb-3">
+                <label for="formFileMultipls" class="form-label">Upload Images</label>
+                <input type="file" class="form-control" id="formFileMultiple" name="image" multiple required>
+                <div class="invalid-feedback">
+                    This campground would look much better with a picture.
+                </div>
             </div>
 
             <div class="mb-3">
