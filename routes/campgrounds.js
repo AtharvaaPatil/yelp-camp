@@ -22,7 +22,7 @@ router.get('/new', isLoggedIn, campgrounds.renderNewForm);
 //This should be before the later one because it will hit the id route and wont find anything and we don't want that
 router.route('/:id')
     .get(catchAsync(campgrounds.showCampground))
-    .put(isLoggedIn, isAuthor, validateCampground, catchAsync(campgrounds.updateCampground))
+    .put(isLoggedIn, isAuthor, upload.array('image'), validateCampground, catchAsync(campgrounds.updateCampground))
     .delete(isLoggedIn, isAuthor, catchAsync(campgrounds.deleteCampground))
 // router.get('/makecampground', catchAsync(async (req, res) => {
 //     const camp = new Campground({
