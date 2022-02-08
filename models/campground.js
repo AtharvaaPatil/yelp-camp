@@ -12,6 +12,7 @@ ImageSchema.virtual('thumbnail').get(function() {
 })
 //this is so that we don't load the whole image we just show the width 200 version which is light weight and won't take long to load
 
+const opts = {toJSON: {virtuals: true}};
 
 const CampgroundSchema = new Schema({
     title: String,
@@ -40,6 +41,18 @@ const CampgroundSchema = new Schema({
             ref: 'Review'
         }
     ]
+}, opts);
+
+// CampgroundSchema.virtual('properties.popUpMarkup').get(function() {
+//     return `<a href="/campgrounds/${this._id}">${this.title}</a>`
+// })
+
+CampgroundSchema.virtual('properties').get(function() {
+    return{
+        id: this._id,
+        title: this.title,
+        description: this.description
+    }
 });
 
 CampgroundSchema.post('findOneAndDelete', async function (doc) {
